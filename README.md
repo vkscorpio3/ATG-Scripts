@@ -34,7 +34,7 @@ To get a property from a specific environment, type:
 Here is a concrete example:
 
 ```
->>>./displayAtgProperty.groovy -b urban -d philly -c /uo/api/service/SiteApiService -p loggingInfo
+./displayAtgProperty.groovy -b urban -d philly -c /uo/api/service/SiteApiService -p loggingInfo
 
 
 Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiService
