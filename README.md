@@ -1,6 +1,11 @@
-ATG Dynamo Component Browser Controller Scripts
+## ATG Dynamo Component Browser Controller Scripts
 
-These scritps use groovy to run if you have not installed groovy, you can use GVM (http://gvmtool.net) to install and maintain it.  To install GVM, open your favourite bash terminal and enter the following:
+### Installation
+
+These scritps use groovy to run if you have not installed groovy, you can use the [GVMTool](http://gvmtool.net) to install and maintain it.
+
+To install GVM, open your favourite bash terminal and enter the following:
+
 
 ```
 curl -s get.gvmtool.net | bash
@@ -14,7 +19,9 @@ gvm install groovy 2.2.2
 
 That's it now you can run the ATG scripts provided here.
 
-To get a property value from an environment, type:
+### Getting a property value
+
+To get a property from a specific environment, type:
 
 ```
 ./displayAtgProperty.groovy -b <brand> -d <environment> -c <component> -p <propertyName>
@@ -40,7 +47,9 @@ Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiServi
 ...
 ```
 
-To set a property value from an environment, type:
+### Setting a property value
+
+To set a property in a specific environment, type:
 
 ``
 ./displayAtgProperty.groovy -b <brand> -d <environment> -c <component> -p <propertyName>
@@ -65,3 +74,14 @@ Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiServi
     UOPHLPAPP02-STORE01       10.9.2.125    -> false
 ...
 ```
+
+### Conclusion and Contact Info
+
+Hope these scritps help.  If you have any questions or would like to ask for some enhancements please contact me at paul@cp-soft.com
+
+Cheers!
+
+Paul Fortin
+Architect Urban Outfitters Inc
+Last edited: July 10, 2014 @ 2:25 PM
+
