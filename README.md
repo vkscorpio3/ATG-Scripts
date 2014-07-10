@@ -36,7 +36,6 @@ Here is a concrete example:
 ```
 ./displayAtgProperty.groovy -b urban -d philly -c /uo/api/service/SiteApiService -p loggingInfo
 
-
 Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiService
 
     UOPHLPAPP01-STORE01       10.9.2.120    -> true
@@ -62,8 +61,7 @@ To set a property in a specific environment, type:
 Here is a concrete example:
 
 ```
->>>./displayAtgProperty.groovy -b urban -d philly -c /uo/api/service/SiteApiService -p loggingInfo -n false
-
+./displayAtgProperty.groovy -b urban -d philly -c /uo/api/service/SiteApiService -p loggingInfo -n false
 
 Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiService
 
@@ -77,7 +75,7 @@ Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiServi
 
 ### Conclusion and Contact Info
 
-Hope these scritps help.  If you have any questions or would like to ask for some enhancements please contact me at paul@cp-soft.com
+Hope these scripts help.  If you have any questions or would like to ask for some enhancements please contact me at paul@cp-soft.com
 
 Cheers!
 
