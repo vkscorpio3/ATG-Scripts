@@ -50,7 +50,7 @@ Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiServi
 
 To set a property in a specific environment, type:
 
-```
+``
 ./displayAtgProperty.groovy -b <brand> -d <environment> -c <component> -p <propertyName>
   -b = Brand
   -d = DC (prod)/Environment (others)
@@ -75,7 +75,7 @@ Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiServi
 
 ### Conclusion and Contact Info
 
-Hope these scripts help.  If you have any questions or would like to ask for some enhancements please contact me at paul@cp-soft.com
+Hope these scritps help.  If you have any questions or would like to ask for some enhancements please contact me at paul@cp-soft.com
 
 Cheers!
 
