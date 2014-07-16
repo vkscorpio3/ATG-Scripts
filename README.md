@@ -24,7 +24,7 @@ That's it now you can run the ATG scripts provided here.
 To get a property from a specific environment, type:
 
 ```
-./displayAtgProperty.groovy -b <brand> -d <environment> -c <component> -p <propertyName>
+./getAtgProperty.groovy -b <brand> -d <environment> -c <component> -p <propertyName>
   -b = Brand
   -d = DC (prod)/Environment (others)
   -c = component to use
@@ -34,7 +34,7 @@ To get a property from a specific environment, type:
 Here is a concrete example:
 
 ```
-./displayAtgProperty.groovy -b urban -d philly -c /uo/api/service/SiteApiService -p loggingInfo
+./getAtgProperty.groovy -b urban -d philly -c /uo/api/service/SiteApiService -p loggingInfo
 
 Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiService
 
@@ -50,12 +50,12 @@ Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiServi
 
 To set a property in a specific environment, type:
 
-``
+```
 ./displayAtgProperty.groovy -b <brand> -d <environment> -c <component> -p <propertyName>
   -b = Brand
   -d = DC (prod)/Environment (others)
   -c = component to use
-  -p property to display
+  -p = property to display
 ```
 
 Here is a concrete example:
@@ -63,7 +63,7 @@ Here is a concrete example:
 ```
 ./displayAtgProperty.groovy -b urban -d philly -c /uo/api/service/SiteApiService -p loggingInfo -n false
 
-Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiService
+Property Listing for urban - philly - /uo/api/service/SiteApiService - loggingInfo
 
     UOPHLPAPP01-STORE01       10.9.2.120    -> false
     UOPHLPAPP01-STORE02       10.9.2.121    -> false
@@ -72,6 +72,34 @@ Property Listing for urban - philly - loggingInfo - /uo/api/service/SiteApiServi
     UOPHLPAPP02-STORE01       10.9.2.125    -> false
 ...
 ```
+
+### To Invoke an ATG Method
+
+To invoke an ATG Method, type:
+
+```
+./invokeAtgMethod.groovy -b <brand> -d <environment> -c <component> -m <methodName>
+  -b = Brand
+  -d = DC (prod)/Environment (others)
+  -c = component to use
+  -m = method to be called
+```
+
+Here is a concrete example:
+
+```
+./invokeAtgMethod.groovy -b urban -d uodev2 -c /atg/userprofiling/ProfileAdapterRepository -m invalidateCaches
+
+Property Listing for urban - philly - /atg/userprofiling/ProfileAdapterRepository - invalidateCaches
+
+    UOPHLPAPP01-STORE01       10.9.2.120    -> 200
+    UOPHLPAPP01-STORE02       10.9.2.121    -> 200
+    UOPHLPAPP01-STORE03       10.9.2.122    -> 200
+    UOPHLPAPP01-STORE04       10.9.2.123    -> 200
+    UOPHLPAPP02-STORE01       10.9.2.125    -> 200
+...
+```
+
 
 ### Conclusion and Contact Info
 

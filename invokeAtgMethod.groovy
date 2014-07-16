@@ -2,10 +2,10 @@
 @Grab(group='org.codehaus.groovy.modules.http-builder', module='http-builder', version='0.7' )
 
 /* NAME
- * listAtgRmiPorts.groovy
+ * invokeAtgMethod.groovy
  * 
  * DESCRIPTION  
- * A groovy script for listing the rmi port settings of the Urban / Anthro production servers
+ * A groovy script for listing the execute component browser commands on the Urban / Anthro production servers
  * 
  * PREREQUISITES
  * * Java installed. Preferably version 6 or higher.
@@ -16,15 +16,15 @@
  *   /dyn/admin interface of the production servers. 
  *
  * AUTHOR
- * Matias Bjarland
- * matias@iteego.com
+ * Paul Fortin
+ * pfortin@urbn.com
  * 
  * CREATED
  * 2013.Apr.23
  * 
  * USAGE
- * $ groovy listAtgRmiPorts.groovy -b urban -c philly
- * $ groovy listAtgRmiPorts.groovy (will print out command line help)
+ * $ groovy executeCommand.groovy -b urban -c philly
+ * $ groovy executeCommand.groovy (will print out command line help)
  *
  */
 
@@ -33,8 +33,18 @@ import static groovyx.net.http.ContentType.*
 import java.text.SimpleDateFormat
 import org.apache.http.*
 import org.apache.http.protocol.*
+import static groovyx.net.http.ContentType.URLENC
 
-int FIVESECONDS  = 5*1000;
+import groovyx.net.http.HTTPBuilder
+import groovyx.net.http.ContentType
+import groovyx.net.http.Method
+import org.apache.http.impl.client.DefaultRedirectStrategy
+import org.apache.http.impl.cookie.BasicClientCookie
+
+
+int FIVESECONDS     = 5*1000;
+int TENSECONDS      = 10*1000;
+int TWENTYSECONDS   = 20*1000;
 
 def opts = parseCommandLine(args)
 
@@ -48,12 +58,15 @@ def outFile = new File("atg_locks_${dateFormat.format(new Date())}.snapshot")
 def env = servers[opts.brand][opts.dc]
 
 println ""
-println "Property Listing for ${opts.brand} - ${opts.dc} - ${opts.component} - ${opts.propertyName}"
+println "invokeAtgMethod: ${opts.brand} - ${opts.dc} - ${opts.component} - ${opts.methodName}"
 println ""
 
 def http = new HTTPBuilder('')
+//http.setFollowRedirects(true)
 http.getClient().getParams().setParameter("http.connection.timeout", new Integer(FIVESECONDS))
-http.getClient().getParams().setParameter("http.socket.timeout", new Integer(FIVESECONDS))
+http.getClient().getParams().setParameter("http.socket.timeout", new Integer(TWENTYSECONDS))
+
+
 
 // enable sending HTTP Basic auth credentials on first request (as opposed to the normal 
 // request-fail-request-again handshake) to prevent error logging in the atg node logs. 
@@ -63,17 +76,17 @@ enablePreemptiveAuthentication(http, env.creds)
 
 // Iterate through the servers, print out the rmi server setting
 env.servers.each { server ->  
+
   try {
     http.get(uri: "http://${server.host}:${env.port}", 
                path: "/dyn/admin/nucleus" + "${opts.component}",
-               contentType : TEXT,  query: [propertyName: "${opts.propertyName}"]) { resp, reader ->
+               contentType : TEXT,  query: [invokeMethod: "${opts.methodName}"]) { resp, reader ->
       def host = "(${server.host})"
-      println "    ${server.name.padRight(25)} ${server.host.padRight(13)} -> " + reader.text.readLines().find { it.contains('white-space:pre') }[30..-8]
+      println "    ${server.name.padRight(25)} ${server.host.padRight(13)} -> " + resp.status
     }      
   } catch (IOException e) {
     println "Failed to connect to server ${server.name} at ${server.host}, message: ${e.message}"
   }
-
 }
 
 println ""
@@ -96,12 +109,12 @@ def enablePreemptiveAuthentication(http, creds) {
 def parseCommandLine(args) {
   def thisScript = new File(getClass().protectionDomain.codeSource.location.toURI()).name
   
-  def cli = new CliBuilder(usage: "groovy $thisScript -b <urban|anthro> -c <reno|philly>")
+  def cli = new CliBuilder(usage: "groovy $thisScript -b <urban|anthro> -d <reno|philly> -c <component> -p <property> -n <newValue>")
   cli.with {
       b longOpt: 'brand', args: 1, argName: "urban|anthro", "The brand to crawl servers for"
       d longOpt: 'dc',  args: 1, argName: "reno|philly", "The DC to crawl servers for."
-      c longOpt: 'component',  args: 1, argName: "...", "e.g.: /uo/commerce/integrations/CartIntegrationService"
-      p longOpt: 'propertyName',  args: 1, argName: "...", "e.g.: averageProcessingTime"
+	  c longOpt: 'component', args: 1, argName: "component", "The component to modify"
+	  m longOpt: 'methodName', args: 1, argName: "methodName", "The method to call"
       h longOpt: 'help', 'Show usage information'
   }
   
@@ -121,9 +134,8 @@ def parseCommandLine(args) {
   if (options.d && 
       !options.d in ['reno', 'philly'])  failWithMessage(cli, "Valid values for the DC switch (-d) are 'reno' and 'philly'")
 
-  if (!options.c)                        failWithMessage(cli, "You need to provide a component name (-c)")
-  if (!options.p)                        failWithMessage(cli, "You need to provide a propertyName (-p)")
-
+  if (!options.c)                        failWithMessage(cli, "You need to provide the Component parameter (-c)!")
+  if (!options.m)                        failWithMessage(cli, "You need to provide the method to call (-m)!")
 
   if (!options) {
     println ""

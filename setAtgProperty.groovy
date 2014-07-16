@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@Grab(group='org.codehaus.groovy.modules.http-builder', module='http-builder', version='0.5.2' )
+@Grab(group='org.codehaus.groovy.modules.http-builder', module='http-builder', version='0.7' )
 
 /* NAME
  * excuteCommand.groovy
