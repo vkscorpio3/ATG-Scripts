@@ -107,7 +107,7 @@ Hope these scritps help.  If you have any questions or would like to ask for som
 
 Cheers!
 
-Paul Fortin
-Architect Urban Outfitters Inc
-Last edited: July 10, 2014 @ 2:25 PM
+Paul Fortin<br>
+Architect Urban Outfitters Inc<br>
+Last edited: July 16, 2014 @1:16 PM
 
