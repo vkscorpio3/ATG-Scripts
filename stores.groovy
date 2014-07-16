@@ -29,10 +29,24 @@ urban {
      
     port = 8080    
     servers  = [
-      [name: 'UOPHLPAPP01-STORE01',       host: '10.9.8.40', lockClient: true],
-      [name: 'UOPHLPAPP01-STORE02',       host: '10.9.8.41', lockClient: true],
+      [name: 'APP01-STORE01',       host: '10.9.8.40', lockClient: true],
+      [name: 'APP01-STORE02',       host: '10.9.8.41', lockClient: true],
     ]
   }
+
+  uostage1 {
+    creds { 
+      username = 'admin'
+      password = 'admin1234' //new String(System.console().readPassword("/dyn/admin password: "))
+    }
+     
+    port = 8080    
+    servers  = [
+      [name: 'APP01-STORE01',       host: '10.11.120.32', lockClient: true],
+      [name: 'APP01-STORE02',       host: '10.11.120.33', lockClient: true],
+    ]
+  }
+
 
   philly {
     creds { 
@@ -101,6 +115,56 @@ urban {
 }
 
 anthro { 
+  andev1 {
+    creds { 
+      username = 'admin'
+      password = 'admin' //new String(System.console().readPassword("/dyn/admin password: "))
+    }
+     
+    port = 8080    
+    servers  = [
+      [name: 'APP01-STORE01',       host: '10.9.8.33', lockClient: true],
+      [name: 'APP01-STORE02',       host: '10.9.8.34', lockClient: true],
+    ]
+  }
+
+  andev2 {
+    creds { 
+      username = 'admin'
+      password = 'admin' //new String(System.console().readPassword("/dyn/admin password: "))
+    }
+     
+    port = 8080    
+    servers  = [
+      [name: 'APP01-STORE01',       host: '10.9.8.122', lockClient: true],
+      [name: 'APP01-STORE02',       host: '10.9.8.123', lockClient: true],
+    ]
+  }
+
+  anstage1 {
+    creds { 
+      username = 'admin'
+      password = 'anthro123' //new String(System.console().readPassword("/dyn/admin password: "))
+    }
+     
+    port = 8080    
+    servers  = [
+      [name: 'APP01-STORE01',       host: '10.11.120.61', lockClient: true],
+    ]
+  }
+
+  aneustage1 {
+    creds { 
+      username = 'admin'
+      password = 'anthro123' //new String(System.console().readPassword("/dyn/admin password: "))
+    }
+     
+    port = 8080    
+    servers  = [
+      [name: 'APP01-STORE01',       host: '10.11.120.171', lockClient: true],
+    ]
+  }
+
   reno {
     creds { 
       username = 'admin'
