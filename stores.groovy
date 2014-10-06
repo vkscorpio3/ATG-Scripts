@@ -131,7 +131,7 @@ anthro {
   andev2 {
     creds { 
       username = 'admin'
-      password = 'admin' //new String(System.console().readPassword("/dyn/admin password: "))
+      password = 'admin123' //new String(System.console().readPassword("/dyn/admin password: "))
     }
      
     port = 8080    
