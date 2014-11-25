@@ -79,7 +79,7 @@ urban {
       [name: 'UOPHLPAPP06-STORE01',       host: '10.9.2.65',  lockClient: true],
       [name: 'UOPHLPAPP06-STORE02',       host: '10.9.2.66',  lockClient: true],
       [name: 'UOPHLPAPP06-STORE03',       host: '10.9.2.67',  lockClient: true],
-      [name: 'UOPHLPAPP06-STORE04',       host: '10.9.2.58',  lockClient: true],
+      [name: 'UOPHLPAPP06-STORE04',       host: '10.9.2.68',  lockClient: true],
     ]
   }
 
