@@ -89,7 +89,7 @@ def chartOrdHist = ChartFactory.createLineChart(*labelsOrdHist, datasetOrdHist,
 chartOrdHist.removeLegend()
 
 SwingBuilder.build {  
-   frame( title: "UO Site(s) Performance", pack: true, show: true,  
+   frame( title: "Anthro - UO Site(s) Performance", pack: true, show: true,  
           defaultCloseOperation: EXIT_ON_CLOSE ) {  
         gridLayout(cols: 1, rows: 3 ) 
         widget(new ChartPanel(chartPipe))  

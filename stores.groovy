@@ -80,7 +80,47 @@ urban {
       [name: 'UOPHLPAPP06-STORE02',       host: '10.9.2.66',  lockClient: true],
       [name: 'UOPHLPAPP06-STORE03',       host: '10.9.2.67',  lockClient: true],
       [name: 'UOPHLPAPP06-STORE04',       host: '10.9.2.68',  lockClient: true],
+
+      [name: 'SHPHLPAPP01-UOSTORE01',       host: '10.9.3.11',  lockClient: true],
+      [name: 'SHPHLPAPP01-UOSTORE02',       host: '10.9.3.12',  lockClient: true],
+      [name: 'SHPHLPAPP01-UOSTORE03',       host: '10.9.3.13',  lockClient: true],
+      [name: 'SHPHLPAPP01-UOSTORE04',       host: '10.9.3.14',  lockClient: true],
+
+      [name: 'SHPHLPAPP02-UOSTORE01',       host: '10.9.3.21',  lockClient: true],
+      [name: 'SHPHLPAPP02-UOSTORE02',       host: '10.9.3.22',  lockClient: true],
+      [name: 'SHPHLPAPP02-UOSTORE03',       host: '10.9.3.23',  lockClient: true],
+      [name: 'SHPHLPAPP02-UOSTORE04',       host: '10.9.3.24',  lockClient: true],
+
+      [name: 'SHPHLPAPP03-UOSTORE01',       host: '10.9.3.31',  lockClient: true],
+      [name: 'SHPHLPAPP03-UOSTORE02',       host: '10.9.3.32',  lockClient: true],
+      [name: 'SHPHLPAPP03-UOSTORE03',       host: '10.9.3.33',  lockClient: true],
+      [name: 'SHPHLPAPP03-UOSTORE04',       host: '10.9.3.34',  lockClient: true],
+
+      [name: 'SHPHLPAPP04-UOSTORE01',       host: '10.9.3.41',  lockClient: true],
+      [name: 'SHPHLPAPP04-UOSTORE02',       host: '10.9.3.42',  lockClient: true],
+      [name: 'SHPHLPAPP04-UOSTORE03',       host: '10.9.3.43',  lockClient: true],
+      [name: 'SHPHLPAPP04-UOSTORE04',       host: '10.9.3.44',  lockClient: true],
     ]
+  }
+
+  phillyeu {
+    creds { 
+      username = 'admin'
+      password = 'urban1234' //new String(System.console().readPassword("/dyn/admin password: "))
+    }
+     
+    port = 8080    
+    servers  = [
+      [name: 'UOPHLPEUAPP01-STORE01',       host: '10.9.2.235', lockClient: true],
+      [name: 'UOPHLPEUAPP01-STORE02',       host: '10.9.2.236', lockClient: true],
+      [name: 'UOPHLPEUAPP01-STORE03',       host: '10.9.2.243', lockClient: true],
+      [name: 'UOPHLPEUAPP01-STORE04',       host: '10.9.2.233', lockClient: true],
+
+      [name: 'UOPHLPEUAPP02-STORE01',       host: '10.9.2.238', lockClient: true],
+      [name: 'UOPHLPEUAPP02-STORE02',       host: '10.9.2.239', lockClient: true],
+      [name: 'UOPHLPEUAPP02-STORE03',       host: '10.9.2.160', lockClient: true],
+      [name: 'UOPHLPEUAPP02-STORE04',       host: '10.9.2.161', lockClient: true],
+    ]    
   }
 
   reno {
@@ -110,6 +150,26 @@ urban {
       [name: 'APP04-STORE02',             host: '10.11.120.145', lockClient: true],
       [name: 'APP04-STORE03',             host: '10.11.120.146', lockClient: true],
       [name: 'APP04-STORE04',             host: '10.11.120.147', lockClient: true],
+
+      [name: 'SHRNOPAPP01-UOSTORE01',             host: '10.11.120.11', lockClient: true],
+      [name: 'SHRNOPAPP01-UOSTORE02',             host: '10.11.120.12', lockClient: true],
+      [name: 'SHRNOPAPP01-UOSTORE03',             host: '10.11.120.13', lockClient: true],
+      [name: 'SHRNOPAPP01-UOSTORE04',             host: '10.11.120.14', lockClient: true],
+
+      [name: 'SHRNOPAPP02-UOSTORE01',             host: '10.11.120.41', lockClient: true],
+      [name: 'SHRNOPAPP02-UOSTORE02',             host: '10.11.120.42', lockClient: true],
+      [name: 'SHRNOPAPP02-UOSTORE03',             host: '10.11.120.43', lockClient: true],
+      [name: 'SHRNOPAPP02-UOSTORE04',             host: '10.11.120.44', lockClient: true],
+
+      [name: 'SHRNOPAPP03-UOSTORE01',             host: '10.11.120.211', lockClient: true],
+      [name: 'SHRNOPAPP03-UOSTORE02',             host: '10.11.120.212', lockClient: true],
+      [name: 'SHRNOPAPP03-UOSTORE03',             host: '10.11.120.213', lockClient: true],
+      [name: 'SHRNOPAPP03-UOSTORE04',             host: '10.11.120.214', lockClient: true],
+
+      [name: 'SHRNOPAPP04-UOSTORE01',             host: '10.11.120.231', lockClient: true],
+      [name: 'SHRNOPAPP04-UOSTORE02',             host: '10.11.120.232', lockClient: true],
+      [name: 'SHRNOPAPP04-UOSTORE03',             host: '10.11.120.233', lockClient: true],
+      [name: 'SHRNOPAPP04-UOSTORE04',             host: '10.11.120.234', lockClient: true],
     ]
   }
 }
@@ -192,6 +252,26 @@ anthro {
       [name: "APP04-STORE02",             host: "10.11.120.193", lockClient: true],
       [name: "APP04-STORE03",             host: "10.11.120.194", lockClient: true],
       [name: "APP04-STORE04",             host: "10.11.120.195", lockClient: true],
+
+      [name: "SHRNOPAPP01-ANSTORE01",             host: "10.11.120.15", lockClient: true],
+      [name: "SHRNOPAPP01-ANSTORE02",             host: "10.11.120.16", lockClient: true],
+      [name: "SHRNOPAPP01-ANSTORE03",             host: "10.11.120.17", lockClient: true],
+      [name: "SHRNOPAPP01-ANSTORE04",             host: "10.11.120.18", lockClient: true],
+
+      [name: "SHRNOPAPP02-ANSTORE01",             host: "10.11.120.45", lockClient: true],
+      [name: "SHRNOPAPP02-ANSTORE02",             host: "10.11.120.46", lockClient: true],
+      [name: "SHRNOPAPP02-ANSTORE03",             host: "10.11.120.47", lockClient: true],
+      [name: "SHRNOPAPP02-ANSTORE04",             host: "10.11.120.48", lockClient: true],
+
+      [name: "SHRNOPAPP03-ANSTORE01",             host: "10.11.120.215", lockClient: true],
+      [name: "SHRNOPAPP03-ANSTORE02",             host: "10.11.120.216", lockClient: true],
+      [name: "SHRNOPAPP03-ANSTORE03",             host: "10.11.120.217", lockClient: true],
+      [name: "SHRNOPAPP03-ANSTORE04",             host: "10.11.120.218", lockClient: true],
+
+      [name: "SHRNOPAPP04-ANSTORE01",             host: "10.11.120.235", lockClient: true],
+      [name: "SHRNOPAPP04-ANSTORE02",             host: "10.11.120.236", lockClient: true],
+      [name: "SHRNOPAPP04-ANSTORE03",             host: "10.11.120.237", lockClient: true],
+      [name: "SHRNOPAPP04-ANSTORE04",             host: "10.11.120.238", lockClient: true],
     ]
   }
 
@@ -223,6 +303,42 @@ anthro {
       [name: "ANPHLPAPP04-STORE02",       host: "10.9.2.96", lockClient: true],
       [name: "ANPHLPAPP04-STORE03",       host: "10.9.2.97", lockClient: true],
       [name: "ANPHLPAPP04-STORE04",       host: "10.9.2.98", lockClient: true],
+
+      [name: 'SHPHLPAPP01-ANSTORE01',       host: '10.9.3.15',  lockClient: true],
+      [name: 'SHPHLPAPP01-ANSTORE02',       host: '10.9.3.16',  lockClient: true],
+      [name: 'SHPHLPAPP01-ANSTORE03',       host: '10.9.3.17',  lockClient: true],
+      [name: 'SHPHLPAPP01-ANSTORE04',       host: '10.9.3.18',  lockClient: true],
+
+      [name: 'SHPHLPAPP02-ANSTORE01',       host: '10.9.3.25',  lockClient: true],
+      [name: 'SHPHLPAPP02-ANSTORE02',       host: '10.9.3.26',  lockClient: true],
+      [name: 'SHPHLPAPP02-ANSTORE03',       host: '10.9.3.27',  lockClient: true],
+      [name: 'SHPHLPAPP02-ANSTORE04',       host: '10.9.3.28',  lockClient: true],
+
+      [name: 'SHPHLPAPP03-ANSTORE01',       host: '10.9.3.35',  lockClient: true],
+      [name: 'SHPHLPAPP03-ANSTORE02',       host: '10.9.3.36',  lockClient: true],
+      [name: 'SHPHLPAPP03-ANSTORE03',       host: '10.9.3.37',  lockClient: true],
+      [name: 'SHPHLPAPP03-ANSTORE04',       host: '10.9.3.38',  lockClient: true],
+
+      [name: 'SHPHLPAPP04-ANSTORE01',       host: '10.9.3.45',  lockClient: true],
+      [name: 'SHPHLPAPP04-ANSTORE02',       host: '10.9.3.46',  lockClient: true],
+      [name: 'SHPHLPAPP04-ANSTORE03',       host: '10.9.3.47',  lockClient: true],
+      [name: 'SHPHLPAPP04-ANSTORE04',       host: '10.9.3.48',  lockClient: true],
+    ]
+  }
+
+  phillyeu {
+    creds {
+      username = 'admin'
+      password = 'anthro1234'      
+    }
+
+    port = 8080    
+    servers = [
+      //[name: "ANPHLPAPP01",               host: "10.9.2.11", lockClient: true]
+      [name: "ANPHLPEUAPP01-STORE01",       host: "10.9.2.100", lockClient: true],
+      [name: "ANPHLPEUAPP01-STORE02",       host: "10.9.2.101", lockClient: true],
+      [name: "ANPHLPEUAPP02-STORE01",       host: "10.9.2.104", lockClient: true],
+      [name: "ANPHLPEUAPP02-STORE02",       host: "10.9.2.105", lockClient: true],
     ]
   }
 }
