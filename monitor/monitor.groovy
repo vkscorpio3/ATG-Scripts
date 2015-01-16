@@ -21,7 +21,7 @@ import org.apache.http.protocol.*
 
 
 def servers = config('stores.groovy')
-def env = servers['urban']['philly']
+def env = servers['anthro']['reno']
 
 def datasetPipe = new DefaultCategoryDataset()
 def datasetTax = new DefaultCategoryDataset()
@@ -89,7 +89,7 @@ def chartOrdHist = ChartFactory.createLineChart(*labelsOrdHist, datasetOrdHist,
 chartOrdHist.removeLegend()
 
 SwingBuilder.build {  
-   frame( title: "Anthro - UO Site(s) Performance", pack: true, show: true,  
+   frame( title: "${env.name} Site(s) Performance", pack: true, show: true,  
           defaultCloseOperation: EXIT_ON_CLOSE ) {  
         gridLayout(cols: 1, rows: 3 ) 
         widget(new ChartPanel(chartPipe))  

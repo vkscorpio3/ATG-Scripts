@@ -49,6 +49,7 @@ urban {
 
 
   philly {
+    name = "Urban-Philly"
     creds { 
       username = 'admin'
       password = 'urban1234' //new String(System.console().readPassword("/dyn/admin password: "))
@@ -124,6 +125,7 @@ urban {
   }
 
   reno {
+    name = "Urban-Reno"
     creds { 
       username = 'admin'
       password = 'urban1234'
@@ -226,6 +228,7 @@ anthro {
   }
 
   reno {
+    name = "Anthro-Reno"
     creds { 
       username = 'admin'
       password = 'anthro1234'
@@ -276,6 +279,7 @@ anthro {
   }
 
   philly {
+    name = "Anthro-Philly"
     creds {
       username = 'admin'
       password = 'anthro1234'      
