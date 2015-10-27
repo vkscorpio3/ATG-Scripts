@@ -21,7 +21,7 @@ import org.apache.http.protocol.*
 
 
 def servers = config('stores.groovy')
-def env = servers['anthro']['reno']
+def env = servers['anthro']['philly']
 
 def datasetPipe = new DefaultCategoryDataset()
 def datasetTax = new DefaultCategoryDataset()
